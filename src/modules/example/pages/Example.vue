@@ -1,7 +1,7 @@
 <script lang="ts" setup>
   import { mapActions, storeToRefs } from "pinia";
   import { onMounted, ref } from "vue";
-  import Hello from "@/components/Hello.vue";
+  import Header from "@/components/HeaderComponents.vue";
   import { useCounterStore } from "@/store/modules/example";
   import { usePokemonStore } from "@/store/modules/pokemon";
 
@@ -23,7 +23,7 @@
 
 <template>
   <h1>{{ welcome }}</h1>
-  <Hello msg="I'm a example component with composition API" />
+  <Header msg="I'm a example component with composition API" />
   <h3>Counter using Pinia Store</h3>
   <p>Counter: {{ counter }}</p>
   <p>Double counter: {{ doubleCounter }}</p>

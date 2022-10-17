@@ -1,33 +1,25 @@
 <script lang="ts" setup>
 import { translate } from './i18n'
-import i18n from './main'
-
-const langs = i18n.global.availableLocales;
-
-function changeLang<T>(val): T {
-  i18n.global.locale.value = val;
-}
-
+import Header from '@/components/HeaderComponents.vue'
+import BaseCalc from '@/components/BaseCalc.vue'
 </script>
 
 
 <template>
+  <Header />
   <div id="nav">
     <router-link to="/">Home</router-link>|
     <router-link to="/about">About</router-link>
   </div>
+  <h1>Description de FreeBitco.in</h1>
+  <p>...</p>
   <img alt="Vue logo" src="@/assets/images/logo.png" width="120" />
   <p>{{ translate('message.hello', { name: 'Denis' }) }}</p>
   <p>0 {{ translate('message.apple', 0) }}</p>
   <p>1 {{ translate('message.apple', 1) }}</p>
   <p>2 {{ translate('message.apple', 2) }}</p>
 
-
-  <button
-    v-for="(lang, i) in langs"
-    :key="i"
-    @click="changeLang(lang)"
-  >{{lang}}</button>
+  <BaseCalc />
 
 </template>
 
